@@ -1,0 +1,10 @@
+.recent
+  h4= title
+  ul.menu--recent
+    - each item in items
+      li.menu__item
+        img(src=item.img alt="update")
+        a.menu_link(href=item.href)= item.title
+        p= item.text
+  
+  a.read-more-link(href=href)= href_text

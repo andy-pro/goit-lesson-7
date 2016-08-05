@@ -1,0 +1,7 @@
+ul.menu--about
+  - each item in items
+    li.menu__item
+      i.icon(class=item.icon)
+      h4= item.title
+      p.text= item.text
+      a.read-more-link(href='#') Read More
