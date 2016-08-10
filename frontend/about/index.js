@@ -12,13 +12,11 @@ export default class About {
           title: about,
           text: data.lorem,
           icon: 'icon-settings'
-        },
-        {
+        }, {
           title: about,
           text: data.lorem,
           icon: 'icon-comment'
-        },
-        {
+        }, {
           title: about,
           text: data.lorem,
           icon: 'icon-music'

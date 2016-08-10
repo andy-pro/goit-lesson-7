@@ -8,8 +8,7 @@ export default class Header {
     this.html = template({
       logo_img: 'img/header/logo.png',
       logo_href: '#home',
-      menu_inline: data.menu_inline,
-      menu_dropdown: data.menu_dropdown,
+      menu: data.menu,
       slider: data.slider
     });
   }

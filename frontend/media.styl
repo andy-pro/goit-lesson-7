@@ -1,5 +1,21 @@
-@media (max-width 959px)
-  /* 768 - 959 px */
+/* 768 - 959 px */
+_screen_md = 959px
+
+/* 480 - 767 px */
+_screen_sm = 767px
+
+/* 320 - 479 px */
+_screen_xs = 479px
+
+@require './header/media'
+@require './menu/media'
+@require './slider/media'
+@require './logos/media'
+@require './categories/media'
+@require './footer/media'
+@require './about/media'
+
+@media screen and (max-width _screen_md)
 
   h4
     font-size: 24px
@@ -8,101 +24,26 @@
     padding-left 20px
     padding-right: 20px
 
-  header
-    height: 800px
+  _header_screen_md()
+  _menu_screen_md()
+  _slider_screen_md()
+  _about_screen_md()
+  _logos_screen_md()
+  _categories_screen_md()
+  _footer_screen_md()
 
-    >.container
-      height: 242px
+@media screen and (max-width _screen_sm)
 
-    nav
-      float left
+  #media-width-detection-element
+    width _screen_sm
 
-    .menu--inline
-      .menu__item
-        margin-left: 0
-        margin-right: 52px
-
-  #logo
-    display: block
-
-  .slider
-    .text-view
-      // width: 350px
-      font-size: 16px
-      padding: 92px 20px 0
-      padding: 92px 0 0 20px
-      height: 275px
-    .phone-view
-      right: 30px
-    .slider-radio
-      top 430px
-      right: 138px
-
-  .category--extra
-    display none
-
-  .category--extranews
-    display block
-
-  .logos
-    img
-      margin-left: 20px
-      margin-right: 20px
-
-@media (max-width 767px)
-  /* 480 - 767 px */
-
-  header
-    height: 550px
-
-    >.container
-      height: 200px
-      text-align: center
-
-    nav
-      float: none
-
-    .menu--inline
-      display: none
-
-    .menu--dropdown
-      display: block
-
-  #logo
-    // display: block
-    // margin 0 auto
-    float: none
-
-  .slider
-    height: 246px
-    .text-view
-      font-size: 11px
-      p
-        display: none
-    .phone-view
-      top -8px
-      right 11px
-      width: 190px
-      // .phone-clear__img
-      //   width: 138px
-      // .phone-fuzzy__img
-      //   width: 80px
-    .phone-play-button
-      margin: 54% 0 0 44%
-      img
-        width: 72%
-    .slider-radio
-      top: 265px;
-      left: 0;
-      right: 0;
-
-  .about
-    .menu__item
-      width 98%
-      display: block
-      margin-bottom 50px
-      p
-        height: 75px
+  _header_screen_sm()
+  _menu_screen_sm()
+  _slider_screen_sm()
+  _about_screen_sm()
+  _logos_screen_sm()
+  _categories_screen_sm()
+  _footer_screen_sm()
 
   .content--wrapper
     width 100%
@@ -111,67 +52,19 @@
     h4
       font-size: 30px
 
-  .category
-    width: 100%
-    margin-right: 0
-    height: 110px
+@media screen and (max-width _screen_xs)
 
-  .logos
-    img
-      margin-left: 30px
-      margin-right: 30px
-
-  footer
-    text-align: center
-    .menu
-      .menu__item
-        margin: 0 2%
-    .disign-link
-      float: none
-
-@media (max-width 479px)
-  /* 320 - 479 px */
-
-  header
-    height: 516px
-
-    .menu--inline
-      display: block
-      .menu__item
-        margin 0
-
-    .menu__item:not(:nth-child(1))
-      display: none
-
-    .menu--dropdown
-      display: none
-
-  .slider
-    background: none
-    .phone-view
-      display: none
-    .text-view
-      float: none
-      width auto
-      display: inline-block
-    .slider-radio
-      top 215px
+  _header_screen_xs()
+  _menu_screen_xs()
+  _slider_screen_xs()
+  _about_screen_xs()
+  _logos_screen_xs()
+  _categories_screen_xs()
+  _footer_screen_xs()
 
   .content
     .quote
       h4
-        font-size: 24px
+        font-size 24px
     .recent
       padding 52px 6px 0
-
-  .categories
-    display none
-
-  .logos
-    img
-      margin-left: 20px
-      margin-right: 20px
-
-  footer
-    .menu
-      display: none

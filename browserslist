@@ -1,6 +1,0 @@
-# IE8+, Firefox 5+, Opera 15+, Chrome latest
-# https://github.com/ai/browserslist
-IE > 8
-Firefox > 5
-Opera > 15
-last 2 Chrome versions

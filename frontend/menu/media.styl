@@ -1,0 +1,22 @@
+/* css for 768 - 959 px */
+_menu_screen_md()
+  .menu--header.menu--h
+    .menu__item
+      margin-left: 0
+      margin-right: 52px
+
+/* css for 480 - 767 px */
+_menu_screen_sm()
+  .menu--header.menu--h
+    .menu__item
+      margin 0
+    .menu__item:not(:nth-child(1))
+        display none
+  .menu--footer
+    .menu__item
+      margin 0 2%
+
+/* css for 320 - 479 px */
+_menu_screen_xs()
+  .menu--footer
+    display none

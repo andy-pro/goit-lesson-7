@@ -10,7 +10,7 @@ export default class Quote {
       title: 'PINGBULLER ',
       href: '#author-quote',
       href_text: 'STARTS HERE',
-      text: data.quote
+      text: data.jabber
     });
   }
 }

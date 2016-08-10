@@ -1,9 +1,7 @@
-header
+header.header
   .container.relative
-    a#logo(href=logo_href)
-      img(src=logo_img, alt='logo')
-    nav
-      !{menu_inline}
-      !{menu_dropdown}
-    
+    #logo
+      a(href=logo_href)
+        img(src=logo_img, alt='logo')
+    nav!= menu
   !{slider}

@@ -2,11 +2,23 @@
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const webpack = require('webpack');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require("path");
 
-let path = require("path");
-let sources = path.join(__dirname, 'frontend');
+const sources = path.join(__dirname, 'frontend');
 
-let ExtractTextPlugin = require("extract-text-webpack-plugin");
+const autoprefixerOptions = {
+  //  IE8+, Firefox 5+, Opera 15+, Chrome latest
+  //  https://github.com/ai/browserslist
+    browsers: [
+      'IE >= 8',
+      'Firefox >= 5',
+      'Opera >= 15',
+      'last 2 Chrome versions'
+    ],
+    cascade: false
+  };
 
 module.exports = {
 
@@ -44,7 +56,10 @@ module.exports = {
     //   _: 'lodash'
     // }),
     // new ExtractTextPlugin('css/main.css')
-    new ExtractTextPlugin('main.css')
+    new ExtractTextPlugin('main.css'),
+    new CopyWebpackPlugin([
+      {from: 'static'}
+    ])
   ],
 
   resolve: {
@@ -77,10 +92,14 @@ module.exports = {
       test: /\.styl$/,
       // loader: "style!css!autoprefixer!stylus?resolve url"
       // loader: ExtractTextPlugin.extract("style", "css!autoprefixer!stylus?resolve url")
-      loader: ExtractTextPlugin.extract("style", "css!autoprefixer!stylus")
+      // loader: ExtractTextPlugin.extract("style", "css!autoprefixer!stylus")
+      loader: ExtractTextPlugin.extract('style', 'css!autoprefixer?'+ JSON.stringify(autoprefixerOptions) +'!stylus?resolve url')
     }, {
       test: /\.(png|jpg|svg)$/,
       loader: "file?name=img/[path][name].[ext]"
+    }, {
+      test:/\.(ttf|eot|woff|woff2)$/,
+      loader: "file?name=[path][name].[ext]"      
     }]
   }
 

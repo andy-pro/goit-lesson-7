@@ -1,11 +1,35 @@
 /* icons */
 
 .icon
-  display: inline-block;
+  display inline-block
+  box-sizing border-box
+
+.icon-circle
+  width 18px
+  height 18px
+  border-radius 9px
+  margin 3px
+  cursor pointer
+
+.icon-circle-dark-off
+  background rgba(20, 20, 30, 0.4)
+
+.icon-circle-dark-on
+  background rgb(236, 236, 236)
+  border 3px solid #555
+
+.icon-circle-light-off
+  background white
+  border 1px solid #e3e3e3
+
+.icon-circle-light-on
+  background linear-gradient(#888, #222)
+  border 3px solid #e3e3e3
+
+.icon-media
   width: 32px;
   height: 32px;
   background: url(icons.png) 0 0 no-repeat;
-  vertical-align: middle;
 
 .icon-settings
   background-position: 0 0;
@@ -13,24 +37,6 @@
   background-position: -31px 0;
 .icon-music
   background-position: -63px 0;
-
-
-.icon-radio
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background: url(slider.png) 0 0 no-repeat;
-  vertical-align: middle;
-  cursor: pointer
-
-.icon-radio-dark-off
-  background-position: -44px 0;
-.icon-radio-dark-on
-  background-position: -66px 0;
-.icon-radio-light-off
-  background-position: 0 0;
-.icon-radio-light-on
-  background-position: -23px 0;
 
 .radio-group
   text-align: center
