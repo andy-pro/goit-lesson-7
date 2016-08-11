@@ -1,13 +1,13 @@
 .slider
   .container.relative
-    .text-view
-      h1= header
-      h3= description
-      p= text
+    .phone-specs
+      h1.phone-specs__header= header
+      h3.phone-specs__description= description
+      p.phone-specs__text= text
     .phone-view
-      img.phone-view__img--clear(src="img/slider/iPhone-4.png", alt="iPhone-4")
-      img.phone-view__img--fuzzy(src="img/slider/iPhone-4-fuzzy.png", alt="iPhone-4-fuzzy")
-      .phone-view__play-btn(href='#')
+      img.phone-view__clear(src="img/slider/iPhone-4.png", alt="iPhone-4")
+      img.phone-view__fuzzy(src="img/slider/iPhone-4-fuzzy.png", alt="iPhone-4-fuzzy")
+      .phone-view__play-btn
         a(href='#')
           img(src="img/slider/Play.png" alt="Click me!")    
     .slider__radio

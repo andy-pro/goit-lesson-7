@@ -7,7 +7,7 @@ export default class Recent {
   constructor(options) {
     let item_title = 'Nunc turpis neque feugiat eget';
     this.html = template({
-      title: 'RECENT UPDATES',
+      header: 'RECENT UPDATES',
       href: '#recent',
       href_text: 'READ MORE HERE',
       items: [

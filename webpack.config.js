@@ -12,7 +12,7 @@ const autoprefixerOptions = {
   //  IE8+, Firefox 5+, Opera 15+, Chrome latest
   //  https://github.com/ai/browserslist
     browsers: [
-      'IE >= 8',
+      'Explorer >= 8',
       'Firefox >= 5',
       'Opera >= 15',
       'last 2 Chrome versions'
@@ -24,16 +24,10 @@ module.exports = {
 
   context: sources,
 
-  // entry: {
-  //   main: "./main"
-  // },
-
   entry: "./main",
 
   output: {
     path: path.join(__dirname, 'public'),
-    // publicPath: 'js/',
-    // filename: "js/[name].js"
     filename: "[name].js"
   },
 
@@ -43,19 +37,13 @@ module.exports = {
     aggregateTimeout: 1000
   },
 
-  // devtool: NODE_ENV == 'development' ? "cheap-inline-module-source-map" : null,
+  devtool: NODE_ENV == 'development' ? "cheap-inline-module-source-map" : null,
 
   plugins: [
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
-      NODE_ENV: JSON.stringify(NODE_ENV),
-      LANG: '"ru"'
-      // LANG: JSON.stringify('ru');
+      NODE_ENV: JSON.stringify(NODE_ENV)
     }),
-    // new webpack.ProvidePlugin({
-    //   _: 'lodash'
-    // }),
-    // new ExtractTextPlugin('css/main.css')
     new ExtractTextPlugin('main.css'),
     new CopyWebpackPlugin([
       {from: 'static'}
@@ -91,15 +79,13 @@ module.exports = {
     }, {
       test: /\.styl$/,
       // loader: "style!css!autoprefixer!stylus?resolve url"
-      // loader: ExtractTextPlugin.extract("style", "css!autoprefixer!stylus?resolve url")
-      // loader: ExtractTextPlugin.extract("style", "css!autoprefixer!stylus")
       loader: ExtractTextPlugin.extract('style', 'css!autoprefixer?'+ JSON.stringify(autoprefixerOptions) +'!stylus?resolve url')
     }, {
       test: /\.(png|jpg|svg)$/,
       loader: "file?name=img/[path][name].[ext]"
     }, {
       test:/\.(ttf|eot|woff|woff2)$/,
-      loader: "file?name=[path][name].[ext]"      
+      loader: "file?name=[path][name].[ext]"
     }]
   }
 

@@ -6,27 +6,15 @@
 !{header}
 
 main
-  .about
-    .container!= about
+  
+  !{about}
 
-  .content
+  .content-section
     .container
-      .content--wrapper!= quote
-      .content--wrapper!= recent
+      .content-wrapper!= quote
+      .content-wrapper!= recent
       
-.container.logos
-  a(href="#brand1")
-    img(src="img/logos/logo-1.png", alt="logo-1")
-  a(href="#brand2")
-    img(src="img/logos/logo-2.png", alt="logo-2")
-  a(href="#brand3")
-    img(src="img/logos/logo-3.png", alt="logo-3")
-  a(href="#brand4")
-    img(src="img/logos/logo-4.png", alt="logo-4")
-  a(href="#brand5")
-    img(src="img/logos/logo-5.png", alt="logo-5")
-  a(href="#brand6")
-    img(src="img/logos/logo-6.png", alt="logo-6")
+!{brands}
   
 !{categories}
 

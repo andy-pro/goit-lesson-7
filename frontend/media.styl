@@ -10,15 +10,14 @@ _screen_xs = 479px
 @require './header/media'
 @require './menu/media'
 @require './slider/media'
-@require './logos/media'
+@require './about/media'
+@require './quote/media'
+@require './recent/media'
+@require './brands/media'
 @require './categories/media'
 @require './footer/media'
-@require './about/media'
 
 @media screen and (max-width _screen_md)
-
-  h4
-    font-size: 24px
 
   .container
     padding-left 20px
@@ -28,7 +27,8 @@ _screen_xs = 479px
   _menu_screen_md()
   _slider_screen_md()
   _about_screen_md()
-  _logos_screen_md()
+  _quote_screen_md()
+  _brands_screen_md()
   _categories_screen_md()
   _footer_screen_md()
 
@@ -37,20 +37,17 @@ _screen_xs = 479px
   #media-width-detection-element
     width _screen_sm
 
+  .content-wrapper
+    width 100%
+
   _header_screen_sm()
   _menu_screen_sm()
   _slider_screen_sm()
   _about_screen_sm()
-  _logos_screen_sm()
+  _quote_screen_sm()
+  _brands_screen_sm()
   _categories_screen_sm()
   _footer_screen_sm()
-
-  .content--wrapper
-    width 100%
-
-  .content
-    h4
-      font-size: 30px
 
 @media screen and (max-width _screen_xs)
 
@@ -58,13 +55,8 @@ _screen_xs = 479px
   _menu_screen_xs()
   _slider_screen_xs()
   _about_screen_xs()
-  _logos_screen_xs()
+  _quote_screen_xs()
+  _recent_screen_xs()
+  _brands_screen_xs()
   _categories_screen_xs()
   _footer_screen_xs()
-
-  .content
-    .quote
-      h4
-        font-size 24px
-    .recent
-      padding 52px 6px 0

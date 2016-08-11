@@ -1,7 +1,9 @@
-ul#about.menu--about
-  - each item in items
-    li.menu__item
-      i.icon.icon-media(class=item.icon)
-      h4= item.title
-      p.text= item.text
-      a.read-more-link(href='#') Read More
+#about.about-section
+  .container
+    ul.preview-list
+      - each item in items
+        li.preview-list__item
+          i.icon.icon-media(class=item.icon)
+          h4.preview-list__title= item.title
+          p.preview-list__text= item.text
+          a.preview-list__more(href='#') Read More

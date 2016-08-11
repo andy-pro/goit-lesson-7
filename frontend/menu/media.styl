@@ -2,16 +2,21 @@
 _menu_screen_md()
   .menu--header.menu--h
     .menu__item
-      margin-left: 0
-      margin-right: 52px
+      margin-left 0
+      margin-right 52px
 
 /* css for 480 - 767 px */
 _menu_screen_sm()
   .menu--header.menu--h
     .menu__item
       margin 0
-    .menu__item:not(:nth-child(1))
-        display none
+      // .menu__item:not(:nth-child(1)) // not support in ie8 :-(
+      // display none
+      // lines below for ie8 support
+      display none
+      &:first-child
+        display inline-block
+
   .menu--footer
     .menu__item
       margin 0 2%

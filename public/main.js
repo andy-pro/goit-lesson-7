@@ -82,35 +82,56 @@
 
 	var _recent2 = _interopRequireDefault(_recent);
 
-	var _categories = __webpack_require__(44);
+	var _brands = __webpack_require__(44);
+
+	var _brands2 = _interopRequireDefault(_brands);
+
+	var _categories = __webpack_require__(48);
 
 	var _categories2 = _interopRequireDefault(_categories);
 
-	var _footer = __webpack_require__(48);
+	var _footer = __webpack_require__(52);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
-	__webpack_require__(53);
+	__webpack_require__(57);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var nav_items = [{ href: "#home", text: "Home" }, { href: "#about", text: "About" }, { href: "#blog", text: "Blog" }, { href: "#products", text: "Products" }, { href: "#lorem", text: "Lorem Ipsum" }, { href: "#dolor", text: "Dolor Sit Amet" }];
 	var lorem = 'Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae lectus eu libero pellentesque pulvinar. Quisque urna risus, mattis pulvinar bibendum in, venenatis quis neque. Mauris nec metus ultricies erat consequat dignissim non eu nisl. Quisque libero tellus, pharetra et eleifend id, interdum elementum arcu. Suspendisse quis mauris non ligula rutrum faucibus eu quis odio. Phasellus eu lobortis odio. In hac habitasse platea dictumst. Proin vestibulum turpis at mauris aliquam non euismod lorem euismod. Aenean dapibus ultricies enim, eget vulputate leo feugiat non.';
 	var jabber = '"Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae lectus eu libero pellentesque pulvinar urna risus, mattis pulvinar bibendum in, venenatis quis neque. Mauris nec metus ultricies erat consequat dignissim non eu nisl."';
 
+	var nav_items = [{ href: "#home", text: "Home" }, { href: "#about", text: "About" }, { href: "#blog", text: "Blog" }, { href: "#products", text: "Products" }, { href: "#lorem", text: "Lorem Ipsum" }, { href: "#dolor", text: "Dolor Sit Amet" }];
+
+	var about_title = 'ABOUT OUR COMPANY';
+
+	var about_items = [{
+	  title: about_title,
+	  text: lorem,
+	  icon: 'icon-settings'
+	}, {
+	  title: about_title,
+	  text: lorem,
+	  icon: 'icon-comment'
+	}, {
+	  title: about_title,
+	  text: lorem,
+	  icon: 'icon-music'
+	}];
+
+	var brand_items = [{ href: "#brand1", src: "img/brands/brand-1.png", alt: "brand-1" }, { href: "#brand2", src: "img/brands/brand-2.png", alt: "brand-2" }, { href: "#brand3", src: "img/brands/brand-3.png", alt: "brand-3" }, { href: "#brand4", src: "img/brands/brand-4.png", alt: "brand-4" }, { href: "#brand5", src: "img/brands/brand-5.png", alt: "brand-5" }, { href: "#brand6", src: "img/brands/brand-6.png", alt: "brand-6" }];
+
 	/* component area */
 
-	// import './initial.css';
-
-
 	var menu_header = new _menu2.default({ nav_items: nav_items, className: ['menu--header', 'menu--h'] });
-	var menu_footer = new _menu2.default({ nav_items: nav_items, className: ['menu--footer'] });
+	var menu_footer = new _menu2.default({ nav_items: nav_items, className: 'menu--footer' });
 	var slider = new _slider2.default();
 	var components = {
 	  header: new _header2.default({ menu: menu_header.html, slider: slider.html }),
-	  about: new _about2.default({ lorem: lorem }),
+	  about: new _about2.default(about_items),
 	  quote: new _quote2.default({ jabber: jabber }),
 	  recent: new _recent2.default(),
+	  brands: new _brands2.default(brand_items),
 	  categories: new _categories2.default({ lorem: lorem }),
 	  footer: new _footer2.default({ menu: menu_footer.html }),
 	  menu_header: menu_header,
@@ -216,8 +237,8 @@
 	var buf = [];
 	var jade_mixins = {};
 	var jade_interp;
-	;var locals_for_with = (locals || {});(function (about, categories, footer, header, quote, recent) {
-	buf.push("\n" + (((jade_interp = header) == null ? '' : jade_interp)) + "<main><div class=\"about\"><div class=\"container\">" + (null == (jade_interp = about) ? "" : jade_interp) + "</div></div><div class=\"content\"><div class=\"container\"><div class=\"content--wrapper\">" + (null == (jade_interp = quote) ? "" : jade_interp) + "</div><div class=\"content--wrapper\">" + (null == (jade_interp = recent) ? "" : jade_interp) + "</div></div></div></main><div class=\"container logos\"><a href=\"#brand1\"><img src=\"img/logos/logo-1.png\" alt=\"logo-1\"></a><a href=\"#brand2\"><img src=\"img/logos/logo-2.png\" alt=\"logo-2\"></a><a href=\"#brand3\"><img src=\"img/logos/logo-3.png\" alt=\"logo-3\"></a><a href=\"#brand4\"><img src=\"img/logos/logo-4.png\" alt=\"logo-4\"></a><a href=\"#brand5\"><img src=\"img/logos/logo-5.png\" alt=\"logo-5\"></a><a href=\"#brand6\"><img src=\"img/logos/logo-6.png\" alt=\"logo-6\"></a></div>" + (((jade_interp = categories) == null ? '' : jade_interp)) + "\n" + (((jade_interp = footer) == null ? '' : jade_interp)) + "<div id=\"media-width-detection-element\"></div>");}.call(this,"about" in locals_for_with?locals_for_with.about:typeof about!=="undefined"?about:undefined,"categories" in locals_for_with?locals_for_with.categories:typeof categories!=="undefined"?categories:undefined,"footer" in locals_for_with?locals_for_with.footer:typeof footer!=="undefined"?footer:undefined,"header" in locals_for_with?locals_for_with.header:typeof header!=="undefined"?header:undefined,"quote" in locals_for_with?locals_for_with.quote:typeof quote!=="undefined"?quote:undefined,"recent" in locals_for_with?locals_for_with.recent:typeof recent!=="undefined"?recent:undefined));;return buf.join("");
+	;var locals_for_with = (locals || {});(function (about, brands, categories, footer, header, quote, recent) {
+	buf.push("\n" + (((jade_interp = header) == null ? '' : jade_interp)) + "<main>" + (((jade_interp = about) == null ? '' : jade_interp)) + "<div class=\"content-section\"><div class=\"container\"><div class=\"content-wrapper\">" + (null == (jade_interp = quote) ? "" : jade_interp) + "</div><div class=\"content-wrapper\">" + (null == (jade_interp = recent) ? "" : jade_interp) + "</div></div></div></main>" + (((jade_interp = brands) == null ? '' : jade_interp)) + "\n" + (((jade_interp = categories) == null ? '' : jade_interp)) + "\n" + (((jade_interp = footer) == null ? '' : jade_interp)) + "<div id=\"media-width-detection-element\"></div>");}.call(this,"about" in locals_for_with?locals_for_with.about:typeof about!=="undefined"?about:undefined,"brands" in locals_for_with?locals_for_with.brands:typeof brands!=="undefined"?brands:undefined,"categories" in locals_for_with?locals_for_with.categories:typeof categories!=="undefined"?categories:undefined,"footer" in locals_for_with?locals_for_with.footer:typeof footer!=="undefined"?footer:undefined,"header" in locals_for_with?locals_for_with.header:typeof header!=="undefined"?header:undefined,"quote" in locals_for_with?locals_for_with.quote:typeof quote!=="undefined"?quote:undefined,"recent" in locals_for_with?locals_for_with.recent:typeof recent!=="undefined"?recent:undefined));;return buf.join("");
 	}
 
 /***/ },
@@ -506,28 +527,20 @@
 	    items: data.nav_items
 	  });
 	  this.componentMount = function () {
-	    console.log('prishlo');
-	    // let root = document.getElementById('header');
-	    // let menuElement = root.querySelector('.menu');
-	    // let menuElement = document.querySelector('#header .menu');
+	    // let menuElement = document.querySelectorAll('.menu--header')[0];
 	    var menuElement = document.getElementsByClassName('menu--header')[0];
-	    console.log(menuElement);
 	    var classList = menuElement.classList;
 	    var ruler = document.getElementById("media-width-detection-element");
-	    // console.log(ruler);
 	    menuElement.onclick = function () {
-	      // console.log(ruler.offsetWidth);
 	      if (ruler.offsetWidth < 768) {
 	        classList.toggle('menu--v');
 	        classList.toggle('menu--h');
-	        console.log('urrrrra!');
 	      }
 	    };
-	    // titleElem.onmousedown = () => false;
 	  };
 	};
 
-	exports.default = Menu;
+		exports.default = Menu;
 
 /***/ },
 /* 20 */
@@ -603,7 +616,7 @@
 	  });
 	};
 
-	exports.default = Slider;
+		exports.default = Slider;
 
 /***/ },
 /* 24 */
@@ -623,7 +636,7 @@
 	var jade_mixins = {};
 	var jade_interp;
 	;var locals_for_with = (locals || {});(function (description, header, text) {
-	buf.push("<div class=\"slider\"><div class=\"container relative\"><div class=\"text-view\"><h1>" + (jade.escape(null == (jade_interp = header) ? "" : jade_interp)) + "</h1><h3>" + (jade.escape(null == (jade_interp = description) ? "" : jade_interp)) + "</h3><p>" + (jade.escape(null == (jade_interp = text) ? "" : jade_interp)) + "</p></div><div class=\"phone-view\"><img src=\"img/slider/iPhone-4.png\" alt=\"iPhone-4\" class=\"phone-view__img--clear\"><img src=\"img/slider/iPhone-4-fuzzy.png\" alt=\"iPhone-4-fuzzy\" class=\"phone-view__img--fuzzy\"><div href=\"#\" class=\"phone-view__play-btn\"><a href=\"#\"><img src=\"img/slider/Play.png\" alt=\"Click me!\"></a></div></div><div class=\"slider__radio\"><div class=\"radio-group\"><i class=\"icon icon-circle icon-circle-dark-off\"></i><i class=\"icon icon-circle icon-circle-dark-on\"></i><i class=\"icon icon-circle icon-circle-dark-off\"></i><i class=\"icon icon-circle icon-circle-dark-off\"></i></div></div></div></div>");}.call(this,"description" in locals_for_with?locals_for_with.description:typeof description!=="undefined"?description:undefined,"header" in locals_for_with?locals_for_with.header:typeof header!=="undefined"?header:undefined,"text" in locals_for_with?locals_for_with.text:typeof text!=="undefined"?text:undefined));;return buf.join("");
+	buf.push("<div class=\"slider\"><div class=\"container relative\"><div class=\"phone-specs\"><h1 class=\"phone-specs__header\">" + (jade.escape(null == (jade_interp = header) ? "" : jade_interp)) + "</h1><h3 class=\"phone-specs__description\">" + (jade.escape(null == (jade_interp = description) ? "" : jade_interp)) + "</h3><p class=\"phone-specs__text\">" + (jade.escape(null == (jade_interp = text) ? "" : jade_interp)) + "</p></div><div class=\"phone-view\"><img src=\"img/slider/iPhone-4.png\" alt=\"iPhone-4\" class=\"phone-view__clear\"><img src=\"img/slider/iPhone-4-fuzzy.png\" alt=\"iPhone-4-fuzzy\" class=\"phone-view__fuzzy\"><div class=\"phone-view__play-btn\"><a href=\"#\"><img src=\"img/slider/Play.png\" alt=\"Click me!\"></a></div></div><div class=\"slider__radio\"><div class=\"radio-group\"><i class=\"icon icon-circle icon-circle-dark-off\"></i><i class=\"icon icon-circle icon-circle-dark-on\"></i><i class=\"icon icon-circle icon-circle-dark-off\"></i><i class=\"icon icon-circle icon-circle-dark-off\"></i></div></div></div></div>");}.call(this,"description" in locals_for_with?locals_for_with.description:typeof description!=="undefined"?description:undefined,"header" in locals_for_with?locals_for_with.header:typeof header!=="undefined"?header:undefined,"text" in locals_for_with?locals_for_with.text:typeof text!=="undefined"?text:undefined));;return buf.join("");
 	}
 
 /***/ },
@@ -657,7 +670,7 @@
 	  });
 	};
 
-	exports.default = Header;
+		exports.default = Header;
 
 /***/ },
 /* 28 */
@@ -678,7 +691,7 @@
 	var jade_mixins = {};
 	var jade_interp;
 	;var locals_for_with = (locals || {});(function (logo_href, logo_img, menu, slider) {
-	buf.push("<header class=\"header\"><div class=\"container relative\"><div id=\"logo\"><a" + (jade.attr("href", logo_href, true, true)) + "><img" + (jade.attr("src", logo_img, true, true)) + " alt=\"logo\"></a></div><nav>" + (null == (jade_interp = menu) ? "" : jade_interp) + "</nav></div>" + (((jade_interp = slider) == null ? '' : jade_interp)) + "</header>");}.call(this,"logo_href" in locals_for_with?locals_for_with.logo_href:typeof logo_href!=="undefined"?logo_href:undefined,"logo_img" in locals_for_with?locals_for_with.logo_img:typeof logo_img!=="undefined"?logo_img:undefined,"menu" in locals_for_with?locals_for_with.menu:typeof menu!=="undefined"?menu:undefined,"slider" in locals_for_with?locals_for_with.slider:typeof slider!=="undefined"?slider:undefined));;return buf.join("");
+	buf.push("<header class=\"header\"><div class=\"container relative\"><div class=\"header__logo\"><a" + (jade.attr("href", logo_href, true, true)) + "><img" + (jade.attr("src", logo_img, true, true)) + " alt=\"logo\"></a></div><nav class=\"header__nav\">" + (null == (jade_interp = menu) ? "" : jade_interp) + "</nav></div>" + (((jade_interp = slider) == null ? '' : jade_interp)) + "</header>");}.call(this,"logo_href" in locals_for_with?locals_for_with.logo_href:typeof logo_href!=="undefined"?logo_href:undefined,"logo_img" in locals_for_with?locals_for_with.logo_img:typeof logo_img!=="undefined"?logo_img:undefined,"menu" in locals_for_with?locals_for_with.menu:typeof menu!=="undefined"?menu:undefined,"slider" in locals_for_with?locals_for_with.slider:typeof slider!=="undefined"?slider:undefined));;return buf.join("");
 	}
 
 /***/ },
@@ -701,28 +714,13 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var About = function About(data) {
+	var About = function About(items) {
 	  _classCallCheck(this, About);
 
-	  var about = 'ABOUT OUR COMPANY';
-	  this.html = (0, _template2.default)({
-	    items: [{
-	      title: about,
-	      text: data.lorem,
-	      icon: 'icon-settings'
-	    }, {
-	      title: about,
-	      text: data.lorem,
-	      icon: 'icon-comment'
-	    }, {
-	      title: about,
-	      text: data.lorem,
-	      icon: 'icon-music'
-	    }]
-	  });
+	  this.html = (0, _template2.default)({ items: items });
 	};
 
-	exports.default = About;
+		exports.default = About;
 
 /***/ },
 /* 33 */
@@ -742,7 +740,7 @@
 	var jade_mixins = {};
 	var jade_interp;
 	;var locals_for_with = (locals || {});(function (items, undefined) {
-	buf.push("<ul id=\"about\" class=\"menu--about\">");
+	buf.push("<div id=\"about\" class=\"about-section\"><div class=\"container\"><ul class=\"preview-list\">");
 	// iterate items
 	;(function(){
 	  var $$obj = items;
@@ -751,7 +749,7 @@
 	    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
 	      var item = $$obj[$index];
 
-	buf.push("<li class=\"menu__item\"><i" + (jade.cls(['icon','icon-media',item.icon], [null,null,true])) + "></i><h4>" + (jade.escape(null == (jade_interp = item.title) ? "" : jade_interp)) + "</h4><p class=\"text\">" + (jade.escape(null == (jade_interp = item.text) ? "" : jade_interp)) + "</p><a href=\"#\" class=\"read-more-link\">Read More</a></li>");
+	buf.push("<li class=\"preview-list__item\"><i" + (jade.cls(['icon','icon-media',item.icon], [null,null,true])) + "></i><h4 class=\"preview-list__title\">" + (jade.escape(null == (jade_interp = item.title) ? "" : jade_interp)) + "</h4><p class=\"preview-list__text\">" + (jade.escape(null == (jade_interp = item.text) ? "" : jade_interp)) + "</p><a href=\"#\" class=\"preview-list__more\">Read More</a></li>");
 	    }
 
 	  } else {
@@ -759,13 +757,13 @@
 	    for (var $index in $$obj) {
 	      $$l++;      var item = $$obj[$index];
 
-	buf.push("<li class=\"menu__item\"><i" + (jade.cls(['icon','icon-media',item.icon], [null,null,true])) + "></i><h4>" + (jade.escape(null == (jade_interp = item.title) ? "" : jade_interp)) + "</h4><p class=\"text\">" + (jade.escape(null == (jade_interp = item.text) ? "" : jade_interp)) + "</p><a href=\"#\" class=\"read-more-link\">Read More</a></li>");
+	buf.push("<li class=\"preview-list__item\"><i" + (jade.cls(['icon','icon-media',item.icon], [null,null,true])) + "></i><h4 class=\"preview-list__title\">" + (jade.escape(null == (jade_interp = item.title) ? "" : jade_interp)) + "</h4><p class=\"preview-list__text\">" + (jade.escape(null == (jade_interp = item.text) ? "" : jade_interp)) + "</p><a href=\"#\" class=\"preview-list__more\">Read More</a></li>");
 	    }
 
 	  }
 	}).call(this);
 
-	buf.push("</ul>");}.call(this,"items" in locals_for_with?locals_for_with.items:typeof items!=="undefined"?items:undefined,"undefined" in locals_for_with?locals_for_with.undefined: false?undefined:undefined));;return buf.join("");
+	buf.push("</ul></div></div>");}.call(this,"items" in locals_for_with?locals_for_with.items:typeof items!=="undefined"?items:undefined,"undefined" in locals_for_with?locals_for_with.undefined: false?undefined:undefined));;return buf.join("");
 	}
 
 /***/ },
@@ -800,7 +798,7 @@
 	  });
 	};
 
-	exports.default = Quote;
+		exports.default = Quote;
 
 /***/ },
 /* 37 */
@@ -820,7 +818,7 @@
 	var jade_mixins = {};
 	var jade_interp;
 	;var locals_for_with = (locals || {});(function (author_img, href, href_text, text, title) {
-	buf.push("<div class=\"quote\"><img" + (jade.attr("src", author_img, true, true)) + " alt=\"author\"><h4>" + (jade.escape(null == (jade_interp = title) ? "" : jade_interp)) + "<a" + (jade.attr("href", href, true, true)) + ">" + (jade.escape(null == (jade_interp = href_text) ? "" : jade_interp)) + "</a></h4><p>" + (jade.escape(null == (jade_interp = text) ? "" : jade_interp)) + "</p></div><div class=\"quote-radio\"><div class=\"radio-group\"><i class=\"icon icon-circle icon-circle-light-off\"></i><i class=\"icon icon-circle icon-circle-light-on\"></i><i class=\"icon icon-circle icon-circle-light-off\"></i><i class=\"icon icon-circle icon-circle-light-off\"></i></div></div>");}.call(this,"author_img" in locals_for_with?locals_for_with.author_img:typeof author_img!=="undefined"?author_img:undefined,"href" in locals_for_with?locals_for_with.href:typeof href!=="undefined"?href:undefined,"href_text" in locals_for_with?locals_for_with.href_text:typeof href_text!=="undefined"?href_text:undefined,"text" in locals_for_with?locals_for_with.text:typeof text!=="undefined"?text:undefined,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined));;return buf.join("");
+	buf.push("<div class=\"quote\"><img" + (jade.attr("src", author_img, true, true)) + " alt=\"author\" class=\"quote__img\"><h4 class=\"quote__title\">" + (jade.escape(null == (jade_interp = title) ? "" : jade_interp)) + "<a" + (jade.attr("href", href, true, true)) + " class=\"quote__link\">" + (jade.escape(null == (jade_interp = href_text) ? "" : jade_interp)) + "</a></h4><p class=\"quote__text\">" + (jade.escape(null == (jade_interp = text) ? "" : jade_interp)) + "</p></div><div class=\"radio-group\"><i class=\"icon icon-circle icon-circle-light-off\"></i><i class=\"icon icon-circle icon-circle-light-on\"></i><i class=\"icon icon-circle icon-circle-light-off\"></i><i class=\"icon icon-circle icon-circle-light-off\"></i></div>");}.call(this,"author_img" in locals_for_with?locals_for_with.author_img:typeof author_img!=="undefined"?author_img:undefined,"href" in locals_for_with?locals_for_with.href:typeof href!=="undefined"?href:undefined,"href_text" in locals_for_with?locals_for_with.href_text:typeof href_text!=="undefined"?href_text:undefined,"text" in locals_for_with?locals_for_with.text:typeof text!=="undefined"?text:undefined,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined));;return buf.join("");
 	}
 
 /***/ },
@@ -848,7 +846,7 @@
 
 	  var item_title = 'Nunc turpis neque feugiat eget';
 	  this.html = (0, _template2.default)({
-	    title: 'RECENT UPDATES',
+	    header: 'RECENT UPDATES',
 	    href: '#recent',
 	    href_text: 'READ MORE HERE',
 	    items: [{
@@ -870,7 +868,7 @@
 	  });
 	};
 
-	exports.default = Recent;
+		exports.default = Recent;
 
 /***/ },
 /* 41 */
@@ -889,8 +887,8 @@
 	var buf = [];
 	var jade_mixins = {};
 	var jade_interp;
-	;var locals_for_with = (locals || {});(function (href, href_text, items, title, undefined) {
-	buf.push("<div class=\"recent\"><h4>" + (jade.escape(null == (jade_interp = title) ? "" : jade_interp)) + "</h4><ul class=\"menu--recent\">");
+	;var locals_for_with = (locals || {});(function (header, href, href_text, items, undefined) {
+	buf.push("<div class=\"recent\"><h4 class=\"recent__header\">" + (jade.escape(null == (jade_interp = header) ? "" : jade_interp)) + "</h4><ul class=\"recent__list\">");
 	// iterate items
 	;(function(){
 	  var $$obj = items;
@@ -899,7 +897,7 @@
 	    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
 	      var item = $$obj[$index];
 
-	buf.push("<li class=\"menu__item\"><img" + (jade.attr("src", item.img, true, true)) + " alt=\"update\"><a" + (jade.attr("href", item.href, true, true)) + " class=\"menu_link\">" + (jade.escape(null == (jade_interp = item.title) ? "" : jade_interp)) + "</a><p>" + (jade.escape(null == (jade_interp = item.text) ? "" : jade_interp)) + "</p></li>");
+	buf.push("<li class=\"recent__item\"><img" + (jade.attr("src", item.img, true, true)) + " alt=\"update\" class=\"recent__img\"><a" + (jade.attr("href", item.href, true, true)) + " class=\"recent__link\">" + (jade.escape(null == (jade_interp = item.title) ? "" : jade_interp)) + "</a><p class=\"recent__text\">" + (jade.escape(null == (jade_interp = item.text) ? "" : jade_interp)) + "</p></li>");
 	    }
 
 	  } else {
@@ -907,13 +905,13 @@
 	    for (var $index in $$obj) {
 	      $$l++;      var item = $$obj[$index];
 
-	buf.push("<li class=\"menu__item\"><img" + (jade.attr("src", item.img, true, true)) + " alt=\"update\"><a" + (jade.attr("href", item.href, true, true)) + " class=\"menu_link\">" + (jade.escape(null == (jade_interp = item.title) ? "" : jade_interp)) + "</a><p>" + (jade.escape(null == (jade_interp = item.text) ? "" : jade_interp)) + "</p></li>");
+	buf.push("<li class=\"recent__item\"><img" + (jade.attr("src", item.img, true, true)) + " alt=\"update\" class=\"recent__img\"><a" + (jade.attr("href", item.href, true, true)) + " class=\"recent__link\">" + (jade.escape(null == (jade_interp = item.title) ? "" : jade_interp)) + "</a><p class=\"recent__text\">" + (jade.escape(null == (jade_interp = item.text) ? "" : jade_interp)) + "</p></li>");
 	    }
 
 	  }
 	}).call(this);
 
-	buf.push("</ul><a" + (jade.attr("href", href, true, true)) + " class=\"read-more-link\">" + (jade.escape(null == (jade_interp = href_text) ? "" : jade_interp)) + "</a></div>");}.call(this,"href" in locals_for_with?locals_for_with.href:typeof href!=="undefined"?href:undefined,"href_text" in locals_for_with?locals_for_with.href_text:typeof href_text!=="undefined"?href_text:undefined,"items" in locals_for_with?locals_for_with.items:typeof items!=="undefined"?items:undefined,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined,"undefined" in locals_for_with?locals_for_with.undefined: false?undefined:undefined));;return buf.join("");
+	buf.push("</ul><a" + (jade.attr("href", href, true, true)) + " class=\"recent__more\">" + (jade.escape(null == (jade_interp = href_text) ? "" : jade_interp)) + "</a></div>");}.call(this,"header" in locals_for_with?locals_for_with.header:typeof header!=="undefined"?header:undefined,"href" in locals_for_with?locals_for_with.href:typeof href!=="undefined"?href:undefined,"href_text" in locals_for_with?locals_for_with.href_text:typeof href_text!=="undefined"?href_text:undefined,"items" in locals_for_with?locals_for_with.items:typeof items!=="undefined"?items:undefined,"undefined" in locals_for_with?locals_for_with.undefined: false?undefined:undefined));;return buf.join("");
 	}
 
 /***/ },
@@ -936,15 +934,13 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var Categories = function Categories(data) {
-	  _classCallCheck(this, Categories);
+	var Brands = function Brands(items) {
+	  _classCallCheck(this, Brands);
 
-	  this.html = (0, _template2.default)({
-	    lorem: data.lorem
-	  });
+	  this.html = (0, _template2.default)({ items: items });
 	};
 
-	exports.default = Categories;
+		exports.default = Brands;
 
 /***/ },
 /* 45 */
@@ -963,8 +959,31 @@
 	var buf = [];
 	var jade_mixins = {};
 	var jade_interp;
-	;var locals_for_with = (locals || {});(function (lorem) {
-	buf.push("<div class=\"categories\"><div class=\"container\"><div class=\"category category--extra\"><h2>PINGBULL<span class=\"light-decor\">ER</span></h2><div class=\"italic-decor\">Copyright 2013, Pingbull AS</div><p class=\"text\">" + (jade.escape(null == (jade_interp = lorem) ? "" : jade_interp)) + "</p></div><div class=\"category category--extra\"><h4>RECENT COMMENTS</h4><p class=\"text\">" + (jade.escape(null == (jade_interp = lorem) ? "" : jade_interp)) + "</p></div><div class=\"category category--extranews\"><h4>NEWS CATEGORIES</h4><p class=\"text\">" + (jade.escape(null == (jade_interp = lorem) ? "" : jade_interp)) + "</p></div><div class=\"category category--extranews\"><h4>NEWS CATEGORIES</h4><p class=\"text\">" + (jade.escape(null == (jade_interp = lorem) ? "" : jade_interp)) + "</p></div><div class=\"category category--news\"><h4>NEWS CATEGORIES</h4><p class=\"text\">" + (jade.escape(null == (jade_interp = lorem) ? "" : jade_interp)) + "</p></div></div></div>");}.call(this,"lorem" in locals_for_with?locals_for_with.lorem:typeof lorem!=="undefined"?lorem:undefined));;return buf.join("");
+	;var locals_for_with = (locals || {});(function (items, undefined) {
+	buf.push("<div class=\"brands container\">");
+	// iterate items
+	;(function(){
+	  var $$obj = items;
+	  if ('number' == typeof $$obj.length) {
+
+	    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+	      var item = $$obj[$index];
+
+	buf.push("<a" + (jade.attr("href", item.href, true, true)) + "><img" + (jade.attr("src", item.src, true, true)) + (jade.attr("alt", item.alt, true, true)) + " class=\"brands__img\"></a>");
+	    }
+
+	  } else {
+	    var $$l = 0;
+	    for (var $index in $$obj) {
+	      $$l++;      var item = $$obj[$index];
+
+	buf.push("<a" + (jade.attr("href", item.href, true, true)) + "><img" + (jade.attr("src", item.src, true, true)) + (jade.attr("alt", item.alt, true, true)) + " class=\"brands__img\"></a>");
+	    }
+
+	  }
+	}).call(this);
+
+	buf.push("</div>");}.call(this,"items" in locals_for_with?locals_for_with.items:typeof items!=="undefined"?items:undefined,"undefined" in locals_for_with?locals_for_with.undefined: false?undefined:undefined));;return buf.join("");
 	}
 
 /***/ },
@@ -979,7 +998,58 @@
 
 	__webpack_require__(49);
 
-	var _template = __webpack_require__(52);
+	var _template = __webpack_require__(51);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Categories = function Categories(data) {
+	  _classCallCheck(this, Categories);
+
+	  this.html = (0, _template2.default)({
+	    lorem: data.lorem
+	  });
+	};
+
+		exports.default = Categories;
+
+/***/ },
+/* 49 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 50 */,
+/* 51 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var jade = __webpack_require__(17);
+
+	module.exports = function template(locals) {
+	var buf = [];
+	var jade_mixins = {};
+	var jade_interp;
+	;var locals_for_with = (locals || {});(function (lorem) {
+	buf.push("<div class=\"categories\"><div class=\"container\"><div class=\"category category--extra\"><h2 class=\"title-logo\">PINGBULL<span class=\"title-logo__suffix\">ER</span></h2><p class=\"category__subscription\">Copyright 2013, Pingbull AS</p><p class=\"category__text\">" + (jade.escape(null == (jade_interp = lorem) ? "" : jade_interp)) + "</p></div><div class=\"category category--extra\"><h4 class=\"category__title\">RECENT COMMENTS</h4><p class=\"category__text\">" + (jade.escape(null == (jade_interp = lorem) ? "" : jade_interp)) + "</p></div><div class=\"category category--extranews\"><h4 class=\"category__title\">NEWS CATEGORIES</h4><p class=\"category__text\">" + (jade.escape(null == (jade_interp = lorem) ? "" : jade_interp)) + "</p></div><div class=\"category category--extranews\"><h4 class=\"category__title\">NEWS CATEGORIES</h4><p class=\"category__text\">" + (jade.escape(null == (jade_interp = lorem) ? "" : jade_interp)) + "</p></div><div class=\"category category--news\"><h4 class=\"category__title\">NEWS CATEGORIES</h4><p class=\"category__text\">" + (jade.escape(null == (jade_interp = lorem) ? "" : jade_interp)) + "</p></div></div></div>");}.call(this,"lorem" in locals_for_with?locals_for_with.lorem:typeof lorem!=="undefined"?lorem:undefined));;return buf.join("");
+	}
+
+/***/ },
+/* 52 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	__webpack_require__(53);
+
+	var _template = __webpack_require__(56);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -995,18 +1065,18 @@
 	  });
 	};
 
-	exports.default = Footer;
+		exports.default = Footer;
 
 /***/ },
-/* 49 */
+/* 53 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 50 */,
-/* 51 */,
-/* 52 */
+/* 54 */,
+/* 55 */,
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var jade = __webpack_require__(17);
@@ -1016,11 +1086,11 @@
 	var jade_mixins = {};
 	var jade_interp;
 	;var locals_for_with = (locals || {});(function (menu) {
-	buf.push("<footer class=\"footer\"><div class=\"container\">" + (((jade_interp = menu) == null ? '' : jade_interp)) + "<div class=\"disign-link\">Designed by <a href=\"#designed\"> Pingbull AS</a></div></div></footer>");}.call(this,"menu" in locals_for_with?locals_for_with.menu:typeof menu!=="undefined"?menu:undefined));;return buf.join("");
+	buf.push("<footer class=\"footer\"><div class=\"container\">" + (((jade_interp = menu) == null ? '' : jade_interp)) + "<div class=\"contact-designer\">Designed by <a href=\"#designed\" class=\"contact-designer__link\"> Pingbull AS</a></div></div></footer>");}.call(this,"menu" in locals_for_with?locals_for_with.menu:typeof menu!=="undefined"?menu:undefined));;return buf.join("");
 	}
 
 /***/ },
-/* 53 */
+/* 57 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

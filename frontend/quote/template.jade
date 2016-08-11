@@ -1,12 +1,11 @@
 .quote
-  img(src=author_img, alt="author")
-  h4= title
-    a(href=href)= href_text
-  p= text
+  img.quote__img(src=author_img, alt="author")
+  h4.quote__title= title
+    a.quote__link(href=href)= href_text
+  p.quote__text= text
   
-.quote-radio
-  .radio-group
-    i.icon.icon-circle.icon-circle-light-off
-    i.icon.icon-circle.icon-circle-light-on
-    i.icon.icon-circle.icon-circle-light-off
-    i.icon.icon-circle.icon-circle-light-off
+.radio-group
+  i.icon.icon-circle.icon-circle-light-off
+  i.icon.icon-circle.icon-circle-light-on
+  i.icon.icon-circle.icon-circle-light-off
+  i.icon.icon-circle.icon-circle-light-off
